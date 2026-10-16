@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Pilih demo chatbot kantin versi aman atau versi rentan untuk praktikum prompt injection.">
+  <title>Demo Chatbot Kantin · Pilih Versi</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #18352b;
+      background: #f2f7f2;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      min-height: 100vh;
+      margin: 0;
+      padding: 28px 18px;
+      place-items: center;
+      background: radial-gradient(ellipse at 12% 0%, #dfefe2 0, transparent 40%), #f2f7f2;
+    }
+    main { width: min(100%, 960px); }
+    .intro { margin: 0 auto 30px; text-align: center; }
+    .eyebrow {
+      display: inline-block;
+      margin: 0;
+      padding: 7px 11px;
+      border: 1px solid #d7e7d9;
+      border-radius: 999px;
+      background: #fff;
+      color: #397353;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+    h1 { margin: 18px 0 10px; font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -.05em; line-height: 1.08; }
+    .intro > p:last-child { max-width: 580px; margin: 0 auto; color: #657970; line-height: 1.7; }
+    .choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card {
+      display: flex;
+      min-height: 280px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: clamp(22px, 4vw, 32px);
+      border: 1px solid #dce8de;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 16px 42px #173b2610;
+    }
+    .tag { margin: 0 0 14px; padding: 6px 10px; border-radius: 999px; font-size: .75rem; font-weight: 800; letter-spacing: .07em; }
+    .safe .tag { background: #eaf7ed; color: #256541; }
+    .unsafe .tag { background: #fff0ef; color: #a23c38; }
+    h2 { margin: 0 0 10px; font-size: 1.45rem; letter-spacing: -.025em; }
+    .description { margin: 0 0 24px; color: #657970; line-height: 1.65; }
+    a {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      margin-top: auto;
+      padding: 12px 17px;
+      border-radius: 11px;
+      background: #176b50;
+      color: #fff;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .18s, background .18s, box-shadow .18s;
+    }
+    a:hover { transform: translateY(-1px); background: #10543e; box-shadow: 0 7px 16px #176b5028; }
+    a:focus-visible { outline: 3px solid #75b68c; outline-offset: 3px; }
+    .unsafe a { background: #a23c38; }
+    .unsafe a:hover { background: #842e2b; box-shadow: 0 7px 16px #a23c3828; }
+    .warning { margin: 22px 0 0; color: #815d34; font-size: .9rem; line-height: 1.6; text-align: center; }
+    @media (max-width: 640px) {
+      body { padding: 28px 14px; }
+      .choices { grid-template-columns: 1fr; gap: 14px; }
+      .card { min-height: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <p class="eyebrow">DEMO CHATBOT KANTIN</p>
+      <h1>Pilih versi demo</h1>
+      <p>Bandingkan implementasi chatbot kantin dengan kontrol aplikasi atau gunakan versi rentan untuk praktikum prompt injection.</p>
+    </header>
+    <section class="choices" aria-label="Pilihan demo">
+      <article class="card safe">
+        <p class="tag">VERSI AMAN</p>
+        <h2>Dengan kontrol aplikasi</h2>
+        <p class="description">Versi aman membatasi jawaban pada informasi menu dan harga serta menolak keluaran yang mengklaim aksi atau voucher.</p>
+        <a href="dumy-aman.html">Buka demo versi aman</a>
+      </article>
+      <article class="card unsafe">
+        <p class="tag">VERSI RENTAN · PRAKTIKUM</p>
+        <h2>Tanpa kontrol aplikasi</h2>
+        <p class="description">Versi ini sengaja rentan untuk praktikum. Gunakan hanya dengan data sintetis, bukan untuk layanan nyata.</p>
+        <a href="dumy.html">Buka demo versi rentan</a>
+      </article>
+    </section>
+    <p class="warning">Kedua demo mengirim permintaan langsung dari browser ke Google AI. Gunakan API key milik sendiri dan jangan masukkan data pribadi atau rahasia.</p>
+  </main>
+</body>
+</html>
